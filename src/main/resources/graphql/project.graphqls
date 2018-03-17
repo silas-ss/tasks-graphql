@@ -1,0 +1,21 @@
+type Project {
+	id: ID!
+	name: String!
+}
+
+input ProjectInput {
+	id: ID!
+	name: String!
+}
+
+type Query {
+	findAllProjects: [Project]!
+	countProjects: Int!
+}
+
+type Mutation {
+	newProject(name: String!): Project!
+	deleteProject(id: Int!): Int!
+	updateProject(project: ProjectInput!): Project!
+}
+
